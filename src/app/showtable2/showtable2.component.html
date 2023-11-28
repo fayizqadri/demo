@@ -1,0 +1,26 @@
+
+
+<p-button type="button" routerLink="/">Table 1</p-button>
+<div class="card">
+  <p-table [value]="tableData" [lazy]="true" [paginator]="true" [rows]="pageSize" [totalRecords]="totalRecords" (onLazyLoad)="loadLazy($event)">
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:25%">Id</th>
+              <th style="width:25%">Title</th>
+              <th style="width:25%">Body</th>
+              <th style="width:25%">User Id</th>
+              <th style="width:25%">Reactions</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-d>
+          <tr>
+              <td>{{ d.id }}</td>
+              <td>{{ d.title }}</td>
+              <td>{{ d.body }}</td>
+              <td>{{ d.userId }}</td>
+              <td>{{ d.reactions }}</td>
+          </tr>
+      </ng-template>
+
+  </p-table>
+</div>
